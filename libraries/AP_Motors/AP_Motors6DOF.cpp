@@ -171,9 +171,17 @@ void AP_Motors6DOF::setup_motors(motor_frame_class frame_class, motor_frame_type
         add_motor_raw_6dof(AP_MOTORS_MOT_6,     -1.0f,          0,              0,              -1.0f,              0,                  0,              6);
         break;
 
-    case SUB_FRAME_CUSTOM:
-        // Put your custom motor setup here
-        //break;
+    case SUB_FRAME_VECTORED_7T:
+        // Signs of Factors decide to motor direction(Leisure Version default : ClockWise)
+        //                 Motor #              Roll Factor     Pitch Factor    Yaw Factor      Throttle Factor     Forward Factor      Lateral Factor  Testing Order
+        add_motor_raw_6dof(AP_MOTORS_MOT_1,     0,              0,              1.0f,           0,                  -1.0f,              1.0f,           1);
+        add_motor_raw_6dof(AP_MOTORS_MOT_2,     0,              0,              -1.0f,          0,                  -1.0f,              -1.0f,          2);
+        add_motor_raw_6dof(AP_MOTORS_MOT_3,     0,              0,              -1.0f,          0,                  1.0f,               1.0f,           3);
+        add_motor_raw_6dof(AP_MOTORS_MOT_4,     0,              0,              1.0f,           0,                  1.0f,               -1.0f,          4);
+        add_motor_raw_6dof(AP_MOTORS_MOT_5,     1.0f,           -0.55f,         0,              -0.4f,              0,                  0,              5);
+        add_motor_raw_6dof(AP_MOTORS_MOT_6,     -1.0f,          -0.55f,         0,              -0.4f,              0,                  0,              6);
+        add_motor_raw_6dof(AP_MOTORS_MOT_7,     0,              1.0f,           0,              -1.0f,              0,                  0,              7);
+        break;
 
     case SUB_FRAME_SIMPLEROV_3:
         add_motor_raw_6dof(AP_MOTORS_MOT_1,     0,              0,              -1.0f,          0,                  1.0f,               0,              1);
@@ -181,6 +189,7 @@ void AP_Motors6DOF::setup_motors(motor_frame_class frame_class, motor_frame_type
         add_motor_raw_6dof(AP_MOTORS_MOT_3,     0,              0,              0,              -1.0f,              0,                  0,              3);
         break;
     case SUB_FRAME_SIMPLEROV_4:
+        break;
     case SUB_FRAME_SIMPLEROV_5:
     default:
         add_motor_raw_6dof(AP_MOTORS_MOT_1,     0,              0,              -1.0f,          0,                  1.0f,               0,              1);
