@@ -66,6 +66,7 @@ protected:
     void output_armed_stabilizing() override;
     void output_armed_stabilizing_vectored();
     void output_armed_stabilizing_vectored_6dof();
+    void output_armed_stabilizing_vectored7T();
 
     // Parameters
     AP_Int8             _motor_reverse[AP_MOTORS_MAX_NUM_MOTORS];
