@@ -180,9 +180,9 @@ void AP_Motors6DOF::setup_motors(motor_frame_class frame_class, motor_frame_type
         add_motor_raw_6dof(AP_MOTORS_MOT_2,     0,              0,              -1.0f,          0,                  -1.0f,              -1.0f,          2);
         add_motor_raw_6dof(AP_MOTORS_MOT_3,     0,              0,              -1.0f,          0,                  1.0f,               1.0f,           3);
         add_motor_raw_6dof(AP_MOTORS_MOT_4,     0,              0,              1.0f,           0,                  1.0f,               -1.0f,          4);
-        add_motor_raw_6dof(AP_MOTORS_MOT_5,     0.75f,          -0.7f,          0,              -0.75f,              0,                  0,              5);
-        add_motor_raw_6dof(AP_MOTORS_MOT_6,     -0.75f,         -0.7f,          0,              -0.75f,              0,                  0,              6);
-        add_motor_raw_6dof(AP_MOTORS_MOT_7,     0.25f,          1.0f,           0,              -1.0f,              0,                  0,              7);
+        add_motor_raw_6dof(AP_MOTORS_MOT_5,     0.75f,          -1.0f,          0,              -1.0f,              0,                  0,              5);
+        add_motor_raw_6dof(AP_MOTORS_MOT_6,     -0.75f,         -1.0f,          0,              -1.0f,              0,                  0,              6);
+        add_motor_raw_6dof(AP_MOTORS_MOT_7,     -0.25f,         1.0f,           0,              -0.686f,            0,                  0,              7);
         break;
 
     case SUB_FRAME_SIMPLEROV_3:
